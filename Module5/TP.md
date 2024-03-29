@@ -10,9 +10,7 @@ Travaux pratiques à rendre pour le prochain cours :
 ----MODULE-05 TP-02----
 
 Système de Gestion d'Utilisateurs en PHP, HTML, CSS, MySQL
-
 Objectif : Développer un système de gestion d'utilisateurs en utilisant PHP, HTML, CSS et MySQL, excluant l'utilisation de JavaScript.
-
 User Story/Use Case Textuel : Système de Gestion d'Utilisateurs
 
 Champs utilisateur :
