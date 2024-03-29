@@ -18,14 +18,19 @@ adresseInput.addEventListener('input', function() {
         .catch(error => console.error('Erreur lors de la récupération des suggestions:', error));
 });
 
-
 function afficherSuggestions(suggestions) {
     suggestionsList.innerHTML = ''; // Efface les anciennes suggestions
 
     suggestions.forEach(suggestion => {
         const li = document.createElement('li');
         li.textContent = suggestion.properties.label;
+
+
+        li.addEventListener('click', function() {
+            adresseInput.value = suggestion.properties.label; 
+            suggestionsList.innerHTML = ''; 
+        });
+
         suggestionsList.appendChild(li);
     });
 }
-
