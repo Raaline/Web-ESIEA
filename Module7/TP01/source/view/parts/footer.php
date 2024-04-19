@@ -1,9 +1,9 @@
     <footer>
-        <ul>
-            <li>Mentions Légales</li>
-            <li>CGU</li>
-            <li>&copy; 2024 Système Gestion Utilisateurs</li>
-        </ul>
+        <div>
+            <p>Mentions Légales</p>
+            <p>CGU</p>
+            <p>&copy; 2024 Système Gestion Utilisateurs</p>
+        </div>
     </footer>
 </body>
 </html>

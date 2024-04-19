@@ -1,14 +1,16 @@
 <!-- login.php -->
 <?php 
-include_once 'parts/header.php'; ?>
+include_once 'parts/header.php'; 
+use Security\Security;
+?>
 <main>
-    <section>
-        <h1>Connexion</h1>
+    <section id="log">
+        <h1 id="un">Connexion</h1>
         <form action="index.php?action=login" method="post">
             <?php if (isset($_SESSION['csrf_token'])) : ?>
                 <input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token']; ?>">
             <?php else : ?>
-                <?php functions\generateCsrfToken(); ?>
+                <?php Security::generate(); ?>
                 <input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token']; ?>">
             <?php endif; ?>
             <label for="email">Email:</label>

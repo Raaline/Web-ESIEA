@@ -1,11 +1,16 @@
+<?php 
+use Security\Security;
+include_once './security/Security.php'; 
+?>
+
 <main>
-    <section>
-        <h1>Inscription</h1>
+    <section id="inscription">
+        <h1 id="un">Inscription</h1>
             <form action="index.php?action=register" method="post">
                 <?php if (isset($_SESSION['csrf_token'])) : ?>
                     <input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token']; ?>">
                 <?php else : ?>
-                    <?php functions\generateCsrfToken(); ?>
+                    <?php Security::generate(); ?>
                     <input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token']; ?>">
                 <?php endif; ?>
                 <label for="nom">Nom:</label>
