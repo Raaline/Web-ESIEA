@@ -41,13 +41,13 @@ class UserService {
                 
                 // Si l'enregistrement est réussi, rediriger vers la page de connexion
                 if ($error === true) {
-                    header("Location: index.php?action=login");
+                    header("Location: index.php?action=login.php");
                     exit();
                 } else {
                     // En cas d'erreur, afficher le message d'erreur sur la page d'inscription
                     // Ajouter le message d'erreur au tableau de données pour l'afficher dans le formulaire
                     $data['error'] = $error;
-                    include_once '/view/register.php';
+                    include_once './view/register.php';
                 }
             }
         } else {
@@ -106,7 +106,7 @@ class UserService {
                 $error->updateInfo($id, $nom, $prenom, $adresse, $email, $password, $confirmPassword);
 
                 if ($error === true) {
-                    header("Location: index.php?action=dashboard");
+                    header("Location: index.php?action=dashboard.php");
                     exit();
                 } else {
                     include_once './view/update.php';
@@ -147,4 +147,6 @@ class UserService {
         header("Location: index.php");
         exit();
     }
+
+    
 }

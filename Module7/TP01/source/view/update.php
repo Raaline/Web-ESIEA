@@ -9,7 +9,7 @@
 
     $user= new UserModel();
 
-    // $userInfo = $user.getUserInfos($_SESSION['user_id']); 
+    $userInfo = $user-> getUserInfos($_SESSION['user_id']);
    
 ?>
 

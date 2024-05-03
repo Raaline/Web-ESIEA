@@ -8,7 +8,7 @@ use PDO;
 use Security\Security;
 
 include_once './service/UserService.php'; 
-include_once './security/Security.php'; 
+
 
 class UserModel {
     private $pdo;
@@ -88,7 +88,7 @@ class UserModel {
 
     public function updateInfo($id, $nom, $prenom, $adresse, $email, $password, $confirmPassword) {
         
-        $pdo = dbConnect();
+        $pdo = $this->connect();
         Security::verify();
 
         try {
@@ -133,7 +133,7 @@ class UserModel {
 
     public function closeAccount($id) {
        
-        $pdo = dbConnect(); 
+        $pdo = $this->connect();
 
         try {
             // Supprimer le compte de l'utilisateur (Requête préparée pour prévenir l'injection SQL)
@@ -151,7 +151,7 @@ class UserModel {
     }
 
     public function getUserInfos($id) {
-        $pdo = dbConnect();
+        $pdo = $this->connect();
 
         try {
             // Récupérer les informations de l'utilisateur par son ID (Requête préparée pour prévenir l'injection SQL)
